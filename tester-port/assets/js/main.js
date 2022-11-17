@@ -188,3 +188,19 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+//Copy
+function copy() {
+    var copyText = document.getElementById("gmail");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    
+    var tooltip = document.getElementById("gmail");
+    tooltip.innerHTML = "Copied: " + copyText.value;
+  }
+  
+  function outFunc() {
+    var tooltip = document.getElementById("gmail");
+    tooltip.innerHTML = "Copy to clipboard";
+  }
